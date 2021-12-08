@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { resolve } = require('path');
-
+const devHost = process.env.VUE_APP_HOST;
 module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
@@ -16,7 +16,7 @@ module.exports = {
     port: 9000, // 端口号
     // proxy: {
     //   '/api': {
-    //     target: '',
+    //     target: devHost,
     //     changeOrigin: true,
     //     pathRewrite: {
     //       '/api': ''
