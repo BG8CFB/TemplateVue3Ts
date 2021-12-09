@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service');
 const { resolve } = require('path');
+const devHost = process.env.VUE_APP_HOST;
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -15,14 +16,14 @@ module.exports = defineConfig({
     host: '', // 主机IP
     port: 9000, // 端口号
     // // 代理配置
-    // proxy: {
-    //   '/api': {
-    //     target: '',
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '/api': ''
-    //     }
-    //   }
-    // }
+    proxy: {
+      '/api': {
+        target: devHost,
+        changeOrigin: true,
+        pathRewrite: {
+          '/api': ''
+        }
+      }
+    }
   },
 });
