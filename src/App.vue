@@ -1,7 +1,16 @@
 <template>
-  <router-view/>
+  <n-config-provider :theme="createTheme([inputDark, datePickerDark])" :locale="zhCN" :date-locale="dateZhCN">
+    <router-view/>
+  </n-config-provider>
 </template>
+<script setup lang="ts">
+import { NConfigProvider } from 'naive-ui';
+// theme
+import { createTheme, inputDark, datePickerDark } from 'naive-ui';
+// locale & dateLocale
+import { zhCN, dateZhCN } from 'naive-ui';
 
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

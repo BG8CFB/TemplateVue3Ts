@@ -12,18 +12,18 @@ module.exports = defineConfig({
     .set('public', resolve('public'));
   },
   devServer: {
-    open: true, // 是否开启浏览器
+    open: false, // 是否开启浏览器
     host: '', // 主机IP
     port: 9000, // 端口号
     // // 代理配置
-    proxy: {
-      '/api': {
-        target: devHost,
-        changeOrigin: true,
-        pathRewrite: {
-          '/api': ''
-        }
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: devHost,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '/api': ''
+    //     }
+    //   }
+    // }
   },
 });
